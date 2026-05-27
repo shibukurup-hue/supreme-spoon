@@ -1,0 +1,364 @@
+html
+!DOCTYPE html
+html lang=en
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleThe Trivandrum Scottish School (TTSS)  CBSE School Thiruvananthapuramtitle
+    style
+         --- CSS STYLING & COLOR THEME --- 
+        root {
+            --primary-blue #0A2540;
+            --secondary-gold #D4AF37;
+            --light-bg #F4F6F9;
+            --text-dark #333333;
+            --white #FFFFFF;
+        }
+
+         {
+            margin 0;
+            padding 0;
+            box-sizing border-box;
+            font-family 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color var(--text-dark);
+            line-height 1.6;
+            background-color var(--white);
+        }
+
+         --- Top Bar --- 
+        .top-bar {
+            background-color var(--secondary-gold);
+            color var(--primary-blue);
+            font-weight bold;
+            text-align center;
+            padding 8px 10px;
+            font-size 0.9rem;
+        }
+
+         --- Header & Navigation --- 
+        header {
+            background-color var(--primary-blue);
+            padding 15px 5%;
+            position sticky;
+            top 0;
+            z-index 1000;
+            display flex;
+            justify-content space-between;
+            align-items center;
+            box-shadow 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo-area h1 {
+            color var(--white);
+            font-size 1.4rem;
+            letter-spacing 1px;
+        }
+        
+        .logo-area span {
+            color var(--secondary-gold);
+            font-size 0.8rem;
+            display block;
+        }
+
+        nav a {
+            color var(--white);
+            text-decoration none;
+            margin 0 15px;
+            font-weight 500;
+            transition color 0.3s;
+        }
+
+        nav ahover {
+            color var(--secondary-gold);
+        }
+
+        .cta-btn {
+            background-color var(--secondary-gold);
+            color var(--primary-blue);
+            padding 10px 20px;
+            border-radius 4px;
+            text-decoration none;
+            font-weight bold;
+            transition background-color 0.3s;
+        }
+
+        .cta-btnhover {
+            background-color #f1c40f;
+        }
+
+         --- Hero Section --- 
+        .hero {
+            background linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)), url('httpsunsplash.com') no-repeat center centercover;
+            height 60vh;
+            display flex;
+            flex-direction column;
+            justify-content center;
+            align-items center;
+            text-align center;
+            color var(--white);
+            padding 0 20px;
+        }
+
+        .hero h2 {
+            font-size 2.5rem;
+            margin-bottom 15px;
+            color var(--secondary-gold);
+        }
+
+        .hero p {
+            font-size 1.2rem;
+            max-width 800px;
+            margin-bottom 25px;
+        }
+
+         --- Sections Framework --- 
+        section {
+            padding 60px 10%;
+        }
+
+        .section-title {
+            text-align center;
+            font-size 2rem;
+            color var(--primary-blue);
+            margin-bottom 40px;
+            position relative;
+        }
+
+        .section-titleafter {
+            content '';
+            width 60px;
+            height 3px;
+            background-color var(--secondary-gold);
+            position absolute;
+            bottom -10px;
+            left 50%;
+            transform translateX(-50%);
+        }
+
+         --- Welcome Layout Grid --- 
+        .welcome-grid {
+            display grid;
+            grid-template-columns 1fr 1fr;
+            gap 40px;
+            align-items center;
+        }
+
+        .welcome-text blockquote {
+            font-style italic;
+            border-left 4px solid var(--secondary-gold);
+            padding-left 15px;
+            margin-top 15px;
+            color #555;
+        }
+
+         --- Layout Cards --- 
+        .bg-light {
+            background-color var(--light-bg);
+        }
+
+        .card-grid {
+            display grid;
+            grid-template-columns repeat(auto-fit, minmax(280px, 1fr));
+            gap 30px;
+        }
+
+        .card {
+            background-color var(--white);
+            padding 30px;
+            border-radius 8px;
+            box-shadow 0 4px 15px rgba(0,0,0,0.05);
+            border-top 4px solid var(--primary-blue);
+            text-align center;
+        }
+
+        .card h3 {
+            color var(--primary-blue);
+            margin-bottom 15px;
+        }
+
+         --- Faculty Profile --- 
+        .faculty-card img {
+            width 120px;
+            height 120px;
+            border-radius 50%;
+            object-fit cover;
+            margin-bottom 15px;
+            border 3px solid var(--secondary-gold);
+        }
+
+        .faculty-card .role {
+            font-size 0.9rem;
+            color #777;
+            font-weight bold;
+            margin-bottom 10px;
+            text-transform uppercase;
+        }
+
+         --- NEW Interactive Gallery Styling --- 
+        .gallery-grid {
+            display grid;
+            grid-template-columns repeat(auto-fit, minmax(250px, 1fr));
+            gap 20px;
+        }
+
+        .gallery-item {
+            position relative;
+            border-radius 8px;
+            overflow hidden;
+            box-shadow 0 4px 10px rgba(0,0,0,0.08);
+            height 200px;
+        }
+
+        .gallery-item img {
+            width 100%;
+            height 100%;
+            object-fit cover;
+            transition transform 0.3s ease;
+        }
+
+        .gallery-itemhover img {
+            transform scale(1.1);
+        }
+
+        .gallery-caption {
+            position absolute;
+            bottom 0;
+            left 0;
+            width 100%;
+            background rgba(10, 37, 64, 0.85);
+            color var(--white);
+            padding 10px;
+            text-align center;
+            font-size 0.9rem;
+            font-weight bold;
+        }
+
+         --- Contact Form & Maps Split Section --- 
+        .contact-split {
+            display grid;
+            grid-template-columns 1.2fr 0.8fr;
+            gap 40px;
+        }
+
+        .map-container {
+            width 100%;
+            height 300px;
+            margin-top 20px;
+            border-radius 8px;
+            overflow hidden;
+            box-shadow 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom 15px;
+        }
+
+        .form-group label {
+            display block;
+            margin-bottom 5px;
+            font-weight 600;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width 100%;
+            padding 10px;
+            border 1px solid #ccc;
+            border-radius 4px;
+        }
+
+        .submit-btn {
+            background-color var(--primary-blue);
+            color var(--white);
+            padding 12px 25px;
+            border none;
+            border-radius 4px;
+            cursor pointer;
+            font-weight bold;
+            width 100%;
+        }
+
+        .submit-btnhover {
+            background-color #143656;
+        }
+
+         --- Footer Layout --- 
+        footer {
+            background-color var(--primary-blue);
+            color var(--white);
+            padding 40px 10%;
+            text-align center;
+            font-size 0.9rem;
+        }
+
+        footer p {
+            margin-bottom 10px;
+        }
+
+        .footer-highlight {
+            color var(--secondary-gold);
+        }
+
+         --- Mobile Responsive Rules --- 
+        @media (max-width 768px) {
+            header {
+                flex-direction column;
+                gap 15px;
+            }
+            nav {
+                display flex;
+                flex-wrap wrap;
+                justify-content center;
+                gap 10px;
+            }
+            nav a {
+                margin 0 8px;
+            }
+            .welcome-grid, .contact-split {
+                grid-template-columns 1fr;
+            }
+            .hero h2 {
+                font-size 1.8rem;
+            }
+        }
+    style
+head
+body
+
+    !-- 1. Top Bar Alerts --
+    div class=top-bar
+        📢 Admissions open for the Academic Year 2026-27! Enquire today.
+    div
+
+    !-- 2. Header and Navigation Menu --
+    header
+        div class=logo-area
+            h1THE TRIVANDRUM SCOTTISH SCHOOLh1
+            spanAffiliated to CBSE, New Delhi (No. 930929)span
+        div
+        nav
+            a href=#homeHomea
+            a href=#aboutAbouta
+            a href=#academicsAcademicsa
+            a href=#facultyFacultya
+            a href=#galleryGallerya
+            a href=#admissionsAdmissionsa
+            a href=#contactContacta
+        nav
+        a href=#contact class=cta-btnEnquire Nowa
+    header
+
+    !-- 3. Hero Visual Section --
+    div class=hero id=home
+        h2Nurturing Minds, Inspiring Excellence, Shaping Futuresh2
+        pWelcome to The Trivandrum Scottish School. We combine a rigorous CBSE framework with a supportive, child-centric learning environment in Thiruvananthapuram.p
+        a href=#admissions class=cta-btnLearn More About Admissionsa
+    div
+
+    !-- 4. Welcome Message --
+    section id=about
+        h2 class=section-titleWelcome to Our Schoolh2
+        div class=welcome-grid
+            div class=welcome-text
